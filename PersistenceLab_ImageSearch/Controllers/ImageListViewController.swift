@@ -13,6 +13,12 @@ class ImageListViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var searchBar: UISearchBar!
   
+  var searchQuery = "money" {
+    didSet {
+      searchImages(with: searchQuery)
+    }
+  }
+  
   var images = [PhotoInfo]() {
     didSet {
       DispatchQueue.main.async {
@@ -21,11 +27,13 @@ class ImageListViewController: UIViewController {
     }
   }
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    searchBar.delegate = self
     collectionView.dataSource = self
     collectionView.delegate = self as? UICollectionViewDelegate
-    searchImages(with: "money")
+    searchImages(with: searchQuery)
   }
   
   func searchImages(with search: String) {
@@ -79,4 +87,16 @@ extension ImageListViewController : UICollectionViewDelegateFlowLayout {
       let itemWidth: CGFloat = maxWidth * 0.80
       return CGSize(width: itemWidth, height: itemWidth)  }
   
+}
+
+extension ImageListViewController : UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+    
+    guard let search = searchBar.text else {
+      print("Search Invalid")
+      return
+    }
+    searchImages(with: search)
+  }
 }

@@ -12,7 +12,7 @@ import NetworkHelper
 struct PhotoAPIClient {
   static func getPhotos(for searchQuery: String?,
                         completion: @escaping (Result<[PhotoInfo], AppError>) -> ()) {
-    let searchQuery = searchQuery ?? "money"
+    let searchQuery = searchQuery?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "money"
     
     let endpointURL = "https://pixabay.com/api/?key=\(SecretKeys.myKey)&q=\(searchQuery)"
     
