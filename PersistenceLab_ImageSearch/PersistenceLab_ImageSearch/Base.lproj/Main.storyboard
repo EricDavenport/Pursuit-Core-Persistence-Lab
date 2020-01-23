@@ -170,7 +170,7 @@
         <!--Detail Controller-->
         <scene sceneID="uRS-5L-E4r">
             <objects>
-                <viewController id="VwA-PB-DkD" customClass="DetailController" customModule="PersistenceLab_ImageSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailController" id="VwA-PB-DkD" customClass="DetailController" customModule="PersistenceLab_ImageSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z4d-pD-KbI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,13 +200,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PreviewURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-Uc-fE0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PreviewURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs5-Uc-fE0">
                                 <rect key="frame" x="20" y="585" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WebFormatURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ya-TA-ptu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WebFormatURL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ya-TA-ptu">
                                 <rect key="frame" x="20" y="620.5" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -264,6 +264,7 @@
                     <connections>
                         <outlet property="favoriteButton" destination="a6u-Xa-WuL" id="77v-0x-ZE9"/>
                         <outlet property="favoriteImageView" destination="3Rl-ih-7g5" id="FCr-MZ-Sgf"/>
+                        <outlet property="favoritesLabel" destination="iB0-v5-Wzq" id="Pik-EC-HVT"/>
                         <outlet property="imageView" destination="Z8L-EA-QoC" id="75N-ot-ZwZ"/>
                         <outlet property="likesLabel" destination="oJS-EL-ieD" id="G3E-M1-Sas"/>
                         <outlet property="previewURLLabel" destination="Vs5-Uc-fE0" id="9G3-C6-Tkn"/>
