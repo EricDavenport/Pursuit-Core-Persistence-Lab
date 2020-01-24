@@ -32,7 +32,7 @@ class ImageListViewController: UIViewController {
     super.viewDidLoad()
     searchBar.delegate = self
     collectionView.dataSource = self
-    collectionView.delegate = self as? UICollectionViewDelegate
+    collectionView.delegate = self
     searchImages(with: searchQuery)
   }
   

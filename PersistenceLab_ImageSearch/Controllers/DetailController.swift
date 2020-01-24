@@ -19,9 +19,11 @@ class DetailController: UIViewController {
   @IBOutlet weak var webFormatLabel : UILabel!
   @IBOutlet weak var previewURLLabel: UILabel!
   @IBOutlet weak var favoritesLabel: UILabel!
+  @IBOutlet weak var heartImage: UIImageView!
   
   var image : PhotoInfo?
   var buttonBoolean = false
+  
   
   func toggleButton() {
     if buttonBoolean == true {
@@ -30,17 +32,40 @@ class DetailController: UIViewController {
     }
   }
   
+  var tap = UITapGestureRecognizer()
+  
+  @objc func doubleTapped() {
+    imageView.isUserInteractionEnabled = true
+       favoriteImageView.image = UIImage(systemName: "star.fill")
+    let thisImage = PhotoInfo(largeImageURL: image!.largeImageURL, likes: image!.likes, views: image!.views, tags: image!.tags, previewURL: image!.previewURL, favorites: image!.favorites, webformatURL: image!.webformatURL)
+    
+    do {
+      try PersistenceHelper.save(photo: thisImage)
+      heartImage.isHidden = false
+    } catch {
+      print("failed to persist photo info")
+    }
+    dismiss(animated: true)
+
+  }
+  func tapSetup() {
+    let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+    tap.numberOfTapsRequired = 2
+    view.addGestureRecognizer(tap)
+  }
   
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     updateUI()
+    tapSetup()
     
   }
   
   func updateUI() {
     toggleButton()
+    heartImage.isHidden = true
     likesLabel.text = "Likes: \(image!.likes)"
     tagsLabel.text = "Tags: \(image!.tags)"
     previewURLLabel.text = "Preview URL: \(image!.previewURL)"
@@ -73,3 +98,4 @@ class DetailController: UIViewController {
   }
   
 }
+

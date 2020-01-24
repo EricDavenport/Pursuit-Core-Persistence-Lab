@@ -230,6 +230,13 @@
                                     <action selector="favoriteButtonPressed:" destination="VwA-PB-DkD" eventType="touchUpInside" id="BVO-1C-pMd"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Gkx-lF-Bac">
+                                <rect key="frame" x="149" y="273.5" width="116" height="67"/>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69.5" id="ASz-vo-k5P"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -237,6 +244,7 @@
                             <constraint firstItem="9Ya-TA-ptu" firstAttribute="leading" secondItem="JJ2-P8-gZk" secondAttribute="leading" constant="20" id="1Lt-t4-T5o"/>
                             <constraint firstItem="MRi-zn-68K" firstAttribute="top" secondItem="Z8L-EA-QoC" secondAttribute="bottom" constant="20" id="1m5-Z3-2bD"/>
                             <constraint firstItem="3Rl-ih-7g5" firstAttribute="centerX" secondItem="Z4d-pD-KbI" secondAttribute="centerX" id="2Ug-bE-5R2"/>
+                            <constraint firstItem="Gkx-lF-Bac" firstAttribute="centerY" secondItem="Z8L-EA-QoC" secondAttribute="centerY" id="2rh-lO-mcL"/>
                             <constraint firstItem="iB0-v5-Wzq" firstAttribute="top" secondItem="MRi-zn-68K" secondAttribute="bottom" constant="15" id="5Uc-sF-cXz"/>
                             <constraint firstItem="3Rl-ih-7g5" firstAttribute="top" secondItem="JJ2-P8-gZk" secondAttribute="top" constant="40" id="62U-U6-JVr"/>
                             <constraint firstItem="JJ2-P8-gZk" firstAttribute="trailing" secondItem="Z8L-EA-QoC" secondAttribute="trailing" constant="20" id="AlO-6y-cgW"/>
@@ -247,12 +255,14 @@
                             <constraint firstItem="iB0-v5-Wzq" firstAttribute="leading" secondItem="JJ2-P8-gZk" secondAttribute="leading" constant="20" id="O7Z-vq-9ea"/>
                             <constraint firstItem="oJS-EL-ieD" firstAttribute="top" secondItem="JJ2-P8-gZk" secondAttribute="top" constant="40" id="Qa9-wr-peI"/>
                             <constraint firstItem="3Rl-ih-7g5" firstAttribute="width" secondItem="a6u-Xa-WuL" secondAttribute="width" id="Qow-ZS-IKD"/>
+                            <constraint firstItem="Gkx-lF-Bac" firstAttribute="centerX" secondItem="MRi-zn-68K" secondAttribute="centerX" id="RDC-tQ-Fcu"/>
                             <constraint firstItem="a6u-Xa-WuL" firstAttribute="centerX" secondItem="Z4d-pD-KbI" secondAttribute="centerX" id="Rc7-2T-azB"/>
                             <constraint firstItem="Vs5-Uc-fE0" firstAttribute="top" secondItem="iB0-v5-Wzq" secondAttribute="bottom" constant="15" id="WzX-Im-UMK"/>
                             <constraint firstItem="JJ2-P8-gZk" firstAttribute="trailing" secondItem="Vs5-Uc-fE0" secondAttribute="trailing" constant="20" id="Y3U-1d-8ah"/>
                             <constraint firstItem="Vs5-Uc-fE0" firstAttribute="leading" secondItem="JJ2-P8-gZk" secondAttribute="leading" constant="20" id="YaI-fO-YJp"/>
                             <constraint firstItem="JJ2-P8-gZk" firstAttribute="trailing" secondItem="MRi-zn-68K" secondAttribute="trailing" constant="20" id="bCd-72-zEc"/>
                             <constraint firstItem="Z8L-EA-QoC" firstAttribute="top" secondItem="3Rl-ih-7g5" secondAttribute="bottom" constant="16" id="dcw-D4-tZg"/>
+                            <constraint firstItem="Gkx-lF-Bac" firstAttribute="leading" secondItem="JJ2-P8-gZk" secondAttribute="leading" constant="149" id="ef3-L3-5GS"/>
                             <constraint firstItem="a6u-Xa-WuL" firstAttribute="leading" secondItem="oJS-EL-ieD" secondAttribute="trailing" constant="8" id="j55-f4-BZy"/>
                             <constraint firstItem="Z8L-EA-QoC" firstAttribute="top" secondItem="a6u-Xa-WuL" secondAttribute="bottom" constant="20" id="nAZ-R6-wCc"/>
                             <constraint firstItem="JJ2-P8-gZk" firstAttribute="trailing" secondItem="9Ya-TA-ptu" secondAttribute="trailing" constant="20" id="oJW-bL-AdF"/>
@@ -265,6 +275,7 @@
                         <outlet property="favoriteButton" destination="a6u-Xa-WuL" id="77v-0x-ZE9"/>
                         <outlet property="favoriteImageView" destination="3Rl-ih-7g5" id="FCr-MZ-Sgf"/>
                         <outlet property="favoritesLabel" destination="iB0-v5-Wzq" id="Pik-EC-HVT"/>
+                        <outlet property="heartImage" destination="Gkx-lF-Bac" id="0el-EI-ABY"/>
                         <outlet property="imageView" destination="Z8L-EA-QoC" id="75N-ot-ZwZ"/>
                         <outlet property="likesLabel" destination="oJS-EL-ieD" id="G3E-M1-Sas"/>
                         <outlet property="previewURLLabel" destination="Vs5-Uc-fE0" id="9G3-C6-Tkn"/>
@@ -274,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2M-Df-4sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3175" y="593"/>
+            <point key="canvasLocation" x="3173.913043478261" y="592.63392857142856"/>
         </scene>
         <!--Item-->
         <scene sceneID="Bic-IT-VgT">
@@ -335,6 +346,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="photo" catalog="system" width="64" height="46"/>
         <image name="star" catalog="system" width="64" height="58"/>
     </resources>
